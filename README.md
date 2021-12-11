@@ -50,6 +50,6 @@ $ python app.py
 黒い32x32の領域をマウスでドラッグすると、文字が書けます。
 「判別」ボタンを押すと、モデルに基づいて判別されます。
 
-<img width="799" alt="sample" src="https://user-images.githubusercontent.com/1301953/145673148-d98f6840-fff5-4055-bd60-5619b5204e98.png">
+<img width="1223" alt="スクリーンショット 2021-12-11 22 45 25" src="https://user-images.githubusercontent.com/1301953/145678919-5dbf9de0-c032-4bb6-aa9e-75e34b1365d2.png">
 
 なお、学習に用いたmnistのモデル（60000データ中128データ分を画像化したもの）は static/images/mnist.jpg 内に入っています。
