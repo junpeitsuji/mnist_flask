@@ -69,6 +69,7 @@ def index():
     if request.method == "POST":
         # 送られてきたデータを取得
         arr = np.array(json.loads(request.form['key']))
+        arr = arr / 255.0
         print(arr.shape)
 
         # 送られてきたデータを画像にして保存
