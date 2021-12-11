@@ -26,6 +26,8 @@ $ pip install flask
 tensorflowのインストール方法は 
 https://www.tensorflow.org/install/pip?hl=ja#virtual-environment-install を参照
 
+mnistのサンプルコードは https://www.tensorflow.org/tutorials/quickstart/beginner?hl=ja を参照（実行結果は ipython_notebook/sample.ipynb にあります。）
+
 
 # 実行方法
 ```
