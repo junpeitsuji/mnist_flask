@@ -23,6 +23,7 @@ $ .\venv\Scripts\activate
 (venv) $ pip install matplotlib jupyterlab
 (venv) $ pip install --upgrade tensorflow
 (venv) $ pip install flask
+(venv) $ pip install -q pyyaml h5py
 ```
 
 ただし `.\venv\Scripts\activate` を実行するには、PowerShellを開く前に実行ポリシーを `RemoteSigned` に変更する必要があるかもしれない。
@@ -36,8 +37,9 @@ mnistのサンプルコードは https://www.tensorflow.org/tutorials/quickstart
 
 # 実行方法
 ```
+$ python train.py
+（モデルが学習し終わるまでしばらく待つ。 `data/learned_mnist_model.h5` が更新される。）
 $ python app.py
-（モデルが学習し終わるまでしばらく待つ）
 ```
 
 その後 http://localhost:5000/ にアクセスする
