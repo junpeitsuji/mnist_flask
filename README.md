@@ -1,0 +1,2 @@
+# mnist_flask
+tensorflowのMNISTサンプルをflaskと連携する
