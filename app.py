@@ -6,6 +6,8 @@ app = Flask(__name__)
 
 import tensorflow as tf
 
+import json
+
 
 def init_model():
     # mnistのデータを取得
@@ -66,7 +68,7 @@ def save_image(data):
 def index():
     if request.method == "POST":
         # 送られてきたデータを取得
-        arr = np.array(eval(request.form['key']))
+        arr = np.array(json.loads(request.form['key']))
         print(arr.shape)
 
         # 送られてきたデータを画像にして保存
