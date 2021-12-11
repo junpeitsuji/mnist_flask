@@ -46,3 +46,5 @@ $ python app.py
 「判別」ボタンを押すと、モデルに基づいて判別されます。
 
 <img width="799" alt="sample" src="https://user-images.githubusercontent.com/1301953/145673148-d98f6840-fff5-4055-bd60-5619b5204e98.png">
+
+なお、学習に用いたmnistのモデル（60000データ中128データ分を画像化したもの）は static/images/mnist.jpg 内に入っています。
