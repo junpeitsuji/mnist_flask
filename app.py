@@ -69,11 +69,12 @@ def index():
     if request.method == "POST":
         # 送られてきたデータを取得
         arr = np.array(json.loads(request.form['key']))
-        arr = arr / 255.0
-        print(arr.shape)
 
         # 送られてきたデータを画像にして保存
         save_image(arr)  
+
+        arr = arr / 255.0
+        print(arr.shape)
 
         # 学習したモデルで予測
         predictions = model(arr).numpy()
