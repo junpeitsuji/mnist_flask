@@ -1,44 +1,10 @@
 import numpy as np
 from PIL import Image
+import tensorflow as tf
+import json
 
 from flask import Flask, render_template, request
 app = Flask(__name__)
-
-import tensorflow as tf
-
-import json
-
-
-def init_model():
-    # mnistのデータを取得
-    mnist = tf.keras.datasets.mnist
-    (x_train, y_train), (x_test, y_test) = mnist.load_data()
-    x_train, x_test = x_train / 255.0, x_test / 255.0  # [0,255]->[0,1] に規格化
-
-    # 機械学習モデルを設定
-    model = tf.keras.models.Sequential([
-        tf.keras.layers.Flatten(input_shape=(28, 28)),
-        tf.keras.layers.Dense(128, activation='relu'),
-        tf.keras.layers.Dropout(0.2),
-        tf.keras.layers.Dense(10)
-    ])
-
-    # 誤差関数
-    loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
-
-    # 学習に関する設定
-    model.compile(optimizer='adam',
-                loss=loss_fn,
-                metrics=['accuracy'])
-
-    # 学習を実行
-    model.fit(x_train, y_train, epochs=5)
-
-    # テストデータの評価
-    model.evaluate(x_test,  y_test, verbose=2)
-
-    return model
-
 
 
 # 文字画像表示
@@ -81,6 +47,8 @@ def index():
         #print(predictions)
         result = tf.nn.softmax(predictions).numpy()
         print("softmax:", result)
+
+        # softmaxの値が一番高いindexを判別結果とする(0-9)
         argmax = np.argmax(result)
         print("argmax:", argmax)
 
@@ -91,7 +59,7 @@ def index():
 
 
 if __name__ == "__main__":
-    # モデルを作成・学習
-    model = init_model()
+    # mnistの学習済みモデルを読み込み
+    model = tf.keras.models.load_model('data/learned_mnist_model.h5')
 
     app.run(host='0.0.0.0', debug=True)
