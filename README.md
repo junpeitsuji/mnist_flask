@@ -12,16 +12,21 @@ $ pip --version
 ```
 
 ## インストール方法
+Windows PowerShellで下記を実行。
+
 ```
 $ git@github.com:junpeitsuji/mnist_flask.git
 $ cd mnist_flask
 $ python -m venv venv
 $ .\venv\Scripts\activate
 
-$ pip install matplotlib jupyterlab
-$ pip install --upgrade tensorflow
-$ pip install flask
+(venv) $ pip install matplotlib jupyterlab
+(venv) $ pip install --upgrade tensorflow
+(venv) $ pip install flask
 ```
+
+ただし `.\venv\Scripts\activate` を実行するには、PowerShellを開く前に実行ポリシーを `RemoteSigned` に変更する必要があるかもしれない。
+https://docs.vmware.com/jp/vRealize-Automation/7.6/com.vmware.vra.iaas.blade.doc/GUID-C86DCF49-F23B-4B9C-9FD5-95524FB74F01.html
 
 tensorflowのインストール方法は 
 https://www.tensorflow.org/install/pip?hl=ja#virtual-environment-install を参照
