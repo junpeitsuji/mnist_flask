@@ -15,7 +15,7 @@ $ pip --version
 Windows PowerShellで下記を実行。
 
 ```
-$ git@github.com:junpeitsuji/mnist_flask.git
+$ git clone git@github.com:junpeitsuji/mnist_flask.git
 $ cd mnist_flask
 $ python -m venv venv
 $ .\venv\Scripts\activate
